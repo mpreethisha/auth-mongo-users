@@ -12,12 +12,12 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve image files statically from /uploads
-app.use("/uploads", express.static("uploads"));
+
+app.use('/uploads', express.static('uploads'));
 
 app.use(users);
 
-// MongoDB connection
+
 const uri = process.env.MONGODB_URI;
 mongoose
   .connect(uri)
